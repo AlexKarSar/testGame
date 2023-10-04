@@ -15,22 +15,6 @@ public abstract class CCreature implements ICreature {
     }
 
     CCreature(byte attack, byte defence, int health, int damageM, int damageN) {
-        if (attack < 1 || attack > 30) {
-            System.out.print("Параметр 'Атака' должен быть в отрезке [1; 30]");
-            return;
-        }
-        if (defence < 1 || defence > 30) {
-            System.out.print("Параметр 'Защита' должен быть в отрезке [1; 30]");
-            return;
-        }
-        if (health < 0) {//Это натуральное число от 0 до N
-            System.out.print("Параметр 'Здоровье' должен быть не меньше 0");
-            return;
-        }
-        if (damageM < 1 || damageM > damageN) {//параметр Урон. Это диапазон натуральных чисел M - N
-            System.out.print("Неправильый ввод параметра 'Урон'. Он задается диапазоном натуральных чисел от M до N, где N>=M");
-            return;
-        }
         this.attack = attack;
         this.defence = defence;
         this.health = health;
