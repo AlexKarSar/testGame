@@ -27,7 +27,7 @@ public class Main {
                 }
                 case 2 -> {
                     System.out.println("Введите параметры объекта класса 'Игрок'");
-                    int [] tmp = inputDamage(in);
+                    int[] tmp = inputDamage(in);
                     CPlayer pl = new CPlayer(inputAttack(in), inputDefence(in), inputHealth(in), tmp[0], tmp[1]);
                     pl.getInfo();
                     System.out.println("Введите кол-во монстров : ");
@@ -35,7 +35,8 @@ public class Main {
                     while (arrOfMonst.length == 0) {
                         try {
                             arrOfMonst = new CMonster[Integer.parseInt(in.nextLine())];
-                            if(arrOfMonst.length == 0) System.out.println("Герой заскучает без монстров. Сделай ему хотя бы 1 монстра");
+                            if (arrOfMonst.length == 0)
+                                System.out.println("Герой заскучает без монстров. Сделай ему хотя бы 1 монстра");
                         } catch (NumberFormatException e) {
                             System.out.println("Введенное значение не является целочисленным (int)");
                         }
@@ -45,7 +46,7 @@ public class Main {
                     System.out.println("Вы хотите сами давать монстрам имена? (1 - да, 0 - нет) :");
                     try {
                         b = Byte.parseByte(in.nextLine());
-                        if(b != 0 && b != 1){
+                        if (b != 0 && b != 1) {
                             System.out.println("Введенное значение не является 0 или 1; значит я сам придумаю им имена");
                         }
                     } catch (NumberFormatException e) {
@@ -53,14 +54,14 @@ public class Main {
                     }
                     if (b == 0) {
                         for (int i = 0; i < arrOfMonst.length; i++) {
-                            System.out.printf("Введите параметры %d класса 'Монстр' :\n", i+1);
+                            System.out.printf("Введите параметры %d-го объекта класса 'Монстр' :\n", i + 1);
                             tmp = inputDamage(in);
                             arrOfMonst[i] = new CMonster(inputAttack(in), inputDefence(in), inputHealth(in), tmp[0], tmp[1]);
                             arrOfMonst[i].getInfo();
                         }
-                    }else {
+                    } else {
                         for (int i = 0; i < arrOfMonst.length; i++) {
-                            System.out.printf("Введите параметры %d-го монстра :\n", i+1);
+                            System.out.printf("Введите параметры %d-го объекта класса 'Монстр' :\n", i + 1);
                             System.out.println("Дайте имя монстру: ");
                             String str = in.nextLine();
                             tmp = inputDamage(in);
