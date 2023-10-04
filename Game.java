@@ -57,6 +57,7 @@ public class Game {
         info(i);
         int damage;
         while (arrOfMonst[i].getHealth() != 0 && player.getHealth() != 0) {
+            player.getInfo();
             System.out.printf("| %d-й раунд битвы | \n", round);
             for (int j = 0; j < player.getAttack() - arrOfMonst[i].getDefence() + 1 && arrOfMonst[i].getHealth() != 0 || j < 1; j++) {
                 damage = player.attack(arrOfMonst[i]);
@@ -87,6 +88,7 @@ public class Game {
         info(i);
         int damage;
         while (arrOfMonst[i].getHealth() != 0 && player.getHealth() != 0) {
+            player.getInfo();
             System.out.printf("| %d-й раунд битвы | \n", round);
             for (int j = 0; j < player.getAttack() - arrOfMonst[i].getDefence() + 1 && arrOfMonst[i].getHealth() != 0 || j < 1; j++) {
                 damage = player.attack(arrOfMonst[i]);
